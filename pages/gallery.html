@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filterable responsive lightbox gallery tutorial</title>
+
+    <!-- magnific-popup css cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles/gallery.css">
+
+</head>
+<body>
+
+
+<div class="gallery">
+
+    <ul class="controls">
+        <li class="buttons active" data-filter="all">all</li>
+        <li class="buttons" data-filter="Diwali">Diwali</li>
+        <li class="buttons" data-filter="Navratri">Navratri</li>
+        <li class="buttons" data-filter="Dussera">Dussera</li>
+        <li class="buttons" data-filter="juice">juice</li>
+        <li class="buttons" data-filter="sandwich">sandwich</li>
+    </ul>
+
+    <div class="image-container">
+
+        <a href="Images/d1.jpg" class="Diwali">
+            <img src="Images/d1.jpg" alt="">
+        </a>
+        <a href="Images/d2.jpg" class="Diwali">
+            <img src="Images/d2.jpg" alt="">
+        </a>
+        <a href="Images/d3.jpg" class="Diwali">
+            <img src="d3.jpg" alt="">
+        </a>
+
+        <a href="Images/gar1.jpg" class="Navratri">
+            <img src="Images/gar1.jpg" alt="">
+        </a>
+        <a href="Images/garb2.jpg" class="Navratri">
+            <img src="Images/garb2.jpg" alt="">
+        </a>
+
+        <a href="images/cake1.jpg" class="image cake">
+            <img src="images/cake1.jpg" alt="">
+        </a>
+        <a href="images/cake2.jpg" class="image cake">
+            <img src="images/cake2.jpg" alt="">
+        </a>
+        <a href="images/cake3.jpg" class="image cake">
+            <img src="images/cake3.jpg" alt="">
+        </a>
+        <a href="images/cake4.jpg" class="image cake">
+            <img src="images/cake4.jpg" alt="">
+        </a>
+        <a href="images/cake5.jpg" class="image cake">
+            <img src="images/cake5.jpg" alt="">
+        </a>
+
+        <a href="Images/dass1.jpg" class="image juice">
+            <img src="Images/dass1.jpg" alt="">
+        </a>
+        <a href="Images/dahan2.jpg" class="image juice">
+            <img src="Images/dahan2.jpg" alt="">
+        </a>
+        <a href="Images/dahan3.jpg" class="image juice">
+            <img src="Images/dahan3.jpg" alt="">
+        </a>
+
+        <a href="images/sandwich1.jpg" class="image sandwich">
+            <img src="images/sandwich1.jpg" alt="">
+        </a>
+        <a href="images/sandwich2.jpg" class="image sandwich">
+            <img src="images/sandwich2.jpg" alt="">
+        </a>
+        <a href="images/sandwich3.jpg" class="image sandwich">
+            <img src="images/sandwich3.jpg" alt="">
+        </a>
+        <a href="images/sandwich4.jpg" class="image sandwich">
+            <img src="images/sandwich4.jpg" alt="">
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- magnific popup js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $('.buttons').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var filter = $(this).attr('data-filter')
+
+        if(filter == 'all'){
+            $('.image').show(400);
+        }else{
+            $('.image').not('.'+filter).hide(200);
+            $('.image').filter('.'+filter).show(400);
+        }
+
+    });
+
+    $('.gallery').magnificPopup({
+
+        delegate:'a',
+        type:'image',
+        gallery:{
+            enabled:true
+        }
+
+    });
+
+});
+
+</script>
+    
+</body>
+</html>
