@@ -104,7 +104,7 @@ section{
 	position: fixed;
 	top:0; left:0; right: 0;
 	z-index:10000 ;
-	background: #a6a1a100;
+	background: #a6a1a141;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
